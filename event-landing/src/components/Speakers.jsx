@@ -5,19 +5,19 @@ const Speakers = () => {
   const speakers = [
     {
       name: 'דניאל דיין',
-      title: 'הוא שאחרי המילואים-',
+      title: 'היום שאחרי המילואים -',
       subtitle: 'בואו ללמוד',
       description: 'הכל על לינקדאין',
     },
     {
       name: 'נעה ליבוביץ',
-      title: 'הצד שלו, הצד שלה-',
+      title: 'הצד שלו, הצד שלה -',
       subtitle: 'חיפוש עבודה',
       description: 'בעיניים של מגייסת',
     },
     {
       name: 'נדב ניסן רודה',
-      title: 'לפרוץ אחרי מאמץ-',
+      title: 'לפרוץ אחרי מאמץ -',
       subtitle: 'כלים נגישים במסע',
       description: 'חיפוש העבודה',
     },
