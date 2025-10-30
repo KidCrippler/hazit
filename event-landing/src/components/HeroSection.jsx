@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import handshakeImg from '../assets/handshake.jpeg';
+import hazitLogo from '../../assets/hazit.jpeg';
+import barzelLogo from '../../assets/barzel.jpeg';
 
 const HeroSection = () => {
   return (
@@ -27,20 +29,22 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-center items-center mb-12 gap-0"
         >
-          {/* Blue Circle - "קהילת ברזל" */}
-          <div className="relative z-10 w-40 h-40 rounded-full bg-brand-blue border-4 border-white flex items-center justify-center shadow-xl">
-            <div className="text-white text-center">
-              <div className="text-2xl font-bold leading-tight">קהילת</div>
-              <div className="text-2xl font-bold leading-tight">ברזל</div>
-            </div>
+          {/* Hazit Logo - Right */}
+          <div className="relative z-10 w-40 h-40 rounded-full border-4 border-white shadow-xl overflow-hidden">
+            <img 
+              src={hazitLogo} 
+              alt="מהחזית לחוזה" 
+              className="w-full h-full object-cover"
+            />
           </div>
           
-          {/* Beige Circle - "#מהחזית_לחוזה" */}
-          <div className="relative -mr-10 w-40 h-40 rounded-full bg-brand-beige border-4 border-white flex items-center justify-center shadow-xl">
-            <div className="text-brand-green text-center">
-              <div className="text-xl font-bold leading-tight">#מהחזית</div>
-              <div className="text-xl font-bold leading-tight">_לחוזה</div>
-            </div>
+          {/* Barzel Logo - Left */}
+          <div className="relative -mr-10 w-40 h-40 rounded-full border-4 border-white shadow-xl overflow-hidden">
+            <img 
+              src={barzelLogo} 
+              alt="קהילת ברזל" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 
@@ -52,7 +56,7 @@ const HeroSection = () => {
           className="space-y-4"
         >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            מהחזית לחוזה רשימתוף קהילת ברזל
+            מהחזית לחוזה בשיתוף קהילת ברזל
           </h1>
           
           <p className="text-xl md:text-2xl font-semibold text-white">
