@@ -14,19 +14,19 @@ const EventInfo = () => {
         >
           {/* Location */}
           <div className="flex items-center gap-3">
-            <MapPin className="w-8 h-8 text-brand-green" strokeWidth={2} />
+            <MapPin className="w-6 h-6 text-brand-green" strokeWidth={2} />
             <div className="text-right">
-              <div className="text-lg font-semibold">משרדי חברת fiverr.</div>
-              <div className="text-base">אליעזר קפלן 8, ת״א</div>
+              <div className="text-base font-semibold">משרדי חברת fiverr.</div>
+              <div className="text-sm">אליעזר קפלן 8, ת״א</div>
             </div>
           </div>
 
           {/* Date & Time */}
           <div className="flex items-center gap-3">
-            <Calendar className="w-8 h-8 text-brand-green" strokeWidth={2} />
+            <Calendar className="w-6 h-6 text-brand-green" strokeWidth={2} />
             <div className="text-right">
-              <div className="text-lg font-semibold">11.11.2025</div>
-              <div className="text-base">17.00-21.00</div>
+              <div className="text-base font-semibold">11.11.2025</div>
+              <div className="text-sm">17.00-21.00</div>
             </div>
           </div>
         </motion.div>

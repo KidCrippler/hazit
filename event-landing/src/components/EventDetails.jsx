@@ -30,10 +30,10 @@ const EventDetails = () => {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 text-right"
               >
-                <div className="flex-shrink-0 w-6 h-6 bg-brand-green rounded-sm flex items-center justify-center">
-                  <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                <div className="flex-shrink-0 w-5 h-5 bg-brand-green rounded-sm flex items-center justify-center">
+                  <Check className="w-3 h-3 text-white" strokeWidth={3} />
                 </div>
-                <span className="text-lg md:text-xl font-semibold text-brand-green-dark">
+                <span className="text-base md:text-lg font-semibold text-brand-green-dark">
                   {feature}
                 </span>
               </motion.div>

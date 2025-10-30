@@ -32,7 +32,7 @@ const CompanyLogos = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="text-brand-green-dark font-bold text-lg md:text-xl"
+              className="text-brand-green-dark font-bold text-base md:text-lg"
             >
               {company}
             </motion.div>

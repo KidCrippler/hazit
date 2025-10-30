@@ -12,11 +12,11 @@ const RSVP = () => {
           viewport={{ once: true }}
           className="space-y-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
             המקומות מוגבלים!
           </h2>
           
-          <p className="text-xl text-white max-w-2xl mx-auto">
+          <p className="text-lg text-white max-w-2xl mx-auto">
             הירשמו עכשיו ותבטיחו את מקומכם באירוע
           </p>
           
@@ -24,7 +24,7 @@ const RSVP = () => {
             href="#register"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 bg-white text-brand-green px-8 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition-shadow"
+            className="inline-flex items-center gap-3 bg-white text-brand-green px-6 py-3 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition-shadow"
           >
             <ArrowLeft className="w-6 h-6" />
             <span>הרשמה לאירוע</span>

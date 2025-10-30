@@ -44,23 +44,23 @@ const Speakers = () => {
             >
               {/* Avatar Circle */}
               <div className="mb-4 flex justify-center">
-                <div className="w-32 h-32 rounded-full bg-brand-green border-4 border-brand-green-dark shadow-lg flex items-center justify-center">
-                  <User className="w-16 h-16 text-white" strokeWidth={1.5} />
+                <div className="w-24 h-24 rounded-full bg-brand-green border-3 border-brand-green-dark shadow-lg flex items-center justify-center">
+                  <User className="w-12 h-12 text-white" strokeWidth={1.5} />
                 </div>
               </div>
               
               {/* Speaker Info */}
               <div className="space-y-1">
-                <h3 className="text-2xl font-bold text-brand-green-dark">
+                <h3 className="text-xl font-bold text-brand-green-dark">
                   {speaker.name}
                 </h3>
-                <p className="text-base text-brand-green-dark">
+                <p className="text-sm text-brand-green-dark">
                   {speaker.title}
                 </p>
-                <p className="text-base text-brand-green-dark">
+                <p className="text-sm text-brand-green-dark">
                   {speaker.subtitle}
                 </p>
-                <p className="text-base text-brand-green-dark">
+                <p className="text-sm text-brand-green-dark">
                   {speaker.description}
                 </p>
               </div>
