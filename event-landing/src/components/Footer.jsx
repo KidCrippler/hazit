@@ -3,7 +3,7 @@ import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-green-dark text-white py-8">
+    <footer className="bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-dark text-white py-12 md:py-16 border-t-4 border-brand-green-light">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0 }}

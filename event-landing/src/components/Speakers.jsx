@@ -32,7 +32,7 @@ const Speakers = () => {
   ];
 
   return (
-    <section className="bg-brand-beige py-8 md:py-16">
+    <section className="bg-gray-50 py-10 md:py-16 lg:py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

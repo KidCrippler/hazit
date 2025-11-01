@@ -30,14 +30,14 @@ const EventDetails = () => {
   ];
 
   return (
-    <section className="relative mt-8 z-10 pb-12">
+    <section className="relative z-10 py-12 md:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-white to-brand-beige shadow-2xl p-4 md:p-12 lg:p-16 border-t-4 border-brand-green"
+          className="bg-white shadow-2xl rounded-3xl p-6 md:p-12 lg:p-16 border-t-8 border-brand-green"
         >
           {/* Section Header */}
           <div className="text-center mb-4 md:mb-12">

@@ -13,7 +13,7 @@ const Itinerary = () => {
   ];
 
   return (
-    <section className="bg-brand-beige py-8 md:py-12">
+    <section className="bg-white py-10 md:py-16 lg:py-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div

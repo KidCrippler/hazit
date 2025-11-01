@@ -3,15 +3,8 @@ import { Calendar, MapPin, Clock } from 'lucide-react';
 
 const EventInfo = () => {
   return (
-    <section className="relative bg-gradient-to-b from-white via-brand-beige/30 to-white py-8 md:py-20 overflow-hidden">
-      {/* Subtle geometric background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <svg className="absolute bottom-0 left-1/3 w-48 h-48 text-brand-orange" fill="currentColor" opacity="0.1">
-          <polygon points="96,0 192,192 0,192" />
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section className="relative bg-gray-50 py-12 md:py-20 lg:py-24 overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-6 md:gap-16 items-center">
             {/* Info Section - Clean Typography */}

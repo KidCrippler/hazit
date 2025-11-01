@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-beige" dir="rtl">
+    <div className="min-h-screen bg-white" dir="rtl">
       <HeroSection />
       <EventDetails />
       <EventInfo />

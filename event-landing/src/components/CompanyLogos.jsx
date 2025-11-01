@@ -71,7 +71,7 @@ const CompanyLogos = () => {
   ];
 
   return (
-    <section className="bg-brand-beige py-16 pb-20">
+    <section className="bg-white py-10 md:py-16 lg:py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0 }}
