@@ -80,6 +80,28 @@ const CompanyLogos = () => {
           viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
+          {/* Section Header */}
+          <div className="text-center mb-12 md:mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-bold text-brand-green-dark mb-4"
+            >
+              חברות משתתפות
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-lg md:text-xl text-brand-green-dark/80 max-w-3xl mx-auto"
+            >
+              החברות הבאות ישתתפו בכנס וישלחו נציגים לשיחות אישיות עם משתתפים ומשתתפות מהמילואים
+            </motion.p>
+          </div>
+
           {/* Mobile layout (4-3-4 pattern) */}
           <div className="md:hidden">
             {/* Mobile row 1 - 4 logos */}
