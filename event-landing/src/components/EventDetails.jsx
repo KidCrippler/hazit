@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Presentation, Briefcase, Users, UserPlus } from 'lucide-react';
 
 const EventDetails = () => {
@@ -7,94 +6,86 @@ const EventDetails = () => {
       icon: Presentation,
       title: 'הרצאות',
       description: 'מומחים בתחום העבודה והקריירה',
-      color: 'from-blue-500 to-blue-600'
+      iconBg: '#bfdbfe',
+      iconColor: '#1e40af',
+      accentColor: '#2563eb'
     },
     {
       icon: Briefcase,
       title: 'יריד משרות',
       description: 'חברות מובילות מחפשות עובדים',
-      color: 'from-green-500 to-green-600'
+      iconBg: '#8ccba8',
+      iconColor: '#1e4029',
+      accentColor: '#4a8359'
     },
     {
       icon: Users,
       title: 'ראיונות עם חברות',
       description: 'הזדמנות להתחבר למגייסים',
-      color: 'from-purple-500 to-purple-600'
+      iconBg: '#e9d5ff',
+      iconColor: '#6b21a8',
+      accentColor: '#9333ea'
     },
     {
       icon: UserPlus,
       title: 'מפגשים עם מנטורים',
       description: 'ממיזם "מהחזית לחוזה"',
-      color: 'from-orange-500 to-orange-600'
+      iconBg: '#fed7aa',
+      iconColor: '#9a3412',
+      accentColor: '#ea580c'
     },
   ];
 
   return (
     <section className="relative z-10 py-12 md:py-20 lg:py-24 bg-white">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-white shadow-2xl rounded-3xl p-6 md:p-12 lg:p-16 border-t-8 border-brand-green"
-        >
-          {/* Section Header */}
-          <div className="text-center mb-4 md:mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-green-dark mb-2 md:mb-4"
-            >
-              מה כולל האירוע?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-sm md:text-xl text-gray-600 max-w-2xl mx-auto"
-            >
-              יום מלא בהזדמנויות, קשרים מקצועיים וכלים למציאת העבודה המושלמת
-            </motion.p>
-          </div>
+      <div className="container mx-auto px-6 max-w-3xl">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-green-dark mb-3">
+            מה כולל האירוע?
+          </h2>
+          <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
+            יום מלא בהזדמנויות, קשרים מקצועיים וכלים למציאת העבודה המושלמת
+          </p>
+        </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 gap-3 md:gap-6 lg:gap-8">
-            {features.map((feature, index) => (
-              <motion.div
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+
+            return (
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative bg-white rounded-2xl p-3 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                className="flex items-start gap-6 flex-row-reverse"
               >
-                {/* Content */}
-                <div className="relative flex items-start gap-2 md:gap-4 text-right">
-                  {/* Icon */}
-                  <div className="flex-shrink-0 order-2">
-                    <div className={`w-10 h-10 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                      <feature.icon className="w-5 h-5 md:w-7 md:h-7 text-white" strokeWidth={2} />
-                    </div>
-                  </div>
-                  
-                  {/* Text */}
-                  <div className="flex-1 order-1">
-                    <h3 className="text-base md:text-2xl font-bold text-brand-green-dark mb-1 md:mb-2 group-hover:text-brand-green transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 text-xs md:text-lg leading-relaxed">
-                      {feature.description}
-                    </p>
+                {/* Icon */}
+                <div className="flex-shrink-0">
+                  <div
+                    className="w-14 h-14 md:w-18 md:h-18 rounded-xl flex items-center justify-center shadow-md"
+                    style={{ backgroundColor: feature.iconBg }}
+                  >
+                    <Icon
+                      className="w-7 h-7 md:w-9 md:h-9"
+                      strokeWidth={2}
+                      style={{ color: feature.iconColor }}
+                    />
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
+                {/* Content */}
+                <div className="flex-1 text-right">
+                  <h3 className="text-xl md:text-3xl font-bold text-brand-green-dark mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
