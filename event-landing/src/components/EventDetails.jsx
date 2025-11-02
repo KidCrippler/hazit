@@ -1,4 +1,5 @@
 import { Presentation, Briefcase, Users, UserPlus } from 'lucide-react';
+import TEDBackground from './TEDBackground';
 
 const EventDetails = () => {
   const features = [
@@ -37,8 +38,9 @@ const EventDetails = () => {
   ];
 
   return (
-    <section className="relative z-10 py-12 md:py-20 lg:py-24 bg-white">
-      <div className="container mx-auto px-6 max-w-3xl">
+    <section className="relative z-10 py-12 md:py-20 lg:py-24 overflow-hidden">
+      <TEDBackground />
+      <div className="container mx-auto px-6 max-w-3xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-green-dark mb-3">

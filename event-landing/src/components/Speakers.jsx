@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import danielImg from '../../assets/daniel.jpeg';
 import noaImg from '../../assets/noa.jpeg';
 import nadavImg from '../../assets/nadav.jpeg';
+import TEDBackground from './TEDBackground';
 
 const Speakers = () => {
   const speakers = [
@@ -32,8 +33,18 @@ const Speakers = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-10 md:py-16 lg:py-20">
-      <div className="container mx-auto px-6">
+    <section className="py-10 md:py-16 lg:py-20 relative overflow-hidden">
+      <TEDBackground backgroundColor="rgba(249, 250, 251, 1)" />
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-bold text-center text-brand-green-dark mb-10 md:mb-16"
+        >
+          המרצים המומחים שלנו
+        </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
