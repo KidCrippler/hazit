@@ -4,6 +4,7 @@ import EventInfo from './components/EventInfo';
 import Itinerary from './components/Itinerary';
 import Speakers from './components/Speakers';
 import CompanyLogos from './components/CompanyLogos';
+import LocationMap from './components/LocationMap';
 import Footer from './components/Footer';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Itinerary />
       <Speakers />
       <CompanyLogos />
+      <LocationMap />
       <Footer />
     </div>
   );
