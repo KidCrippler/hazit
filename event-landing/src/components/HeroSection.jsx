@@ -54,11 +54,11 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-2xl md:text-3xl font-semibold text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-            מזמינים אתכם לכנס
+            מזמינים אתכם לכנס מעסיקים
           </p>
 
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
-            מעסיקים למען אנשי ונשות המילואים
+            למען משרתי ומשרתות המילואים
           </p>
 
           <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
