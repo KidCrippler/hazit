@@ -3,13 +3,13 @@ import { Clock, Users, Coffee, Mic, Heart, Sparkles } from 'lucide-react';
 
 const Itinerary = () => {
   const events = [
-    { time: '17:00-17:30', title: 'התכנסות ופתיחה', icon: Users, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
-    { time: '17:30-17:50', title: 'דברי פתיחה', icon: Mic, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
-    { time: '17:50-18:00', title: 'אוריאל', icon: Sparkles, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
+    { time: '17:00-17:30', title: 'התכנסות', icon: Users, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
+    { time: '17:30-17:50', title: 'דברי פתיחה', subtitle: 'ירין ודניאלה', icon: Mic, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
+    { time: '17:50-18:00', title: 'סיפור הצלחה - אוריאל', subtitle: 'איך עברתי מהחזית לחוזה', icon: Sparkles, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
     { time: '18:00-18:45', title: 'פאנל מעסיקים', icon: Users, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
     { time: '18:45-19:00', title: 'הפסקה', icon: Coffee, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
-    { time: '19:00-20:00', title: 'TED', icon: Mic, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
-    { time: '19:00-20:00', title: 'ספיד דייטינג', icon: Heart, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
+    { time: '19:00-20:00', title: 'הרצאות בסגנון TED', subtitle: 'כלים פרקטיים ומנטליים לחיפוש עבודה ביום שאחרי', icon: Mic, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
+    { time: '18:00-21:00', title: 'ספיד דייטינג', subtitle: 'ראיונות עם מעסיקים', icon: Heart, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
   ];
 
   return (
@@ -39,19 +39,7 @@ const Itinerary = () => {
         >
           {/* Table Container with Glass Effect */}
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-brand-green/10">
-            {/* Table Header */}
-            <div className="bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-light p-4 md:p-6">
-              <div className="flex items-center justify-between text-white">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" strokeWidth={2.5} />
-                  <span className="text-lg md:text-xl font-bold">שעה</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5" strokeWidth={2.5} />
-                  <span className="text-lg md:text-xl font-bold">פעילות</span>
-                </div>
-              </div>
-            </div>
+            
 
             {/* Scrollable Table Body */}
             <div className="max-h-[450px] overflow-y-auto custom-scrollbar">
@@ -68,6 +56,7 @@ const Itinerary = () => {
                     viewport={{ once: true }}
                     className={`
                       flex items-center justify-between p-4 md:p-5 border-b border-brand-green/5
+                      min-h-[88px] md:min-h-[96px]
                       ${index % 2 === 0 ? 'bg-brand-beige/20' : 'bg-white'}
                       hover:bg-brand-green/5 transition-all duration-300 group
                       ${isLastTwo ? 'relative overflow-hidden' : ''}
@@ -79,10 +68,15 @@ const Itinerary = () => {
                     )}
 
                     {/* Event Title Column */}
-                    <div className="relative z-10 flex-1">
+                    <div className={`relative z-10 flex-1 flex flex-col ${!event.subtitle ? 'justify-center' : ''}`}>
                       <h3 className="text-lg md:text-xl font-bold text-brand-green-dark group-hover:text-brand-green transition-colors duration-300">
                         {event.title}
                       </h3>
+                      {event.subtitle && (
+                        <p className="text-sm md:text-base text-brand-green/80 font-medium mt-1">
+                          {event.subtitle}
+                        </p>
+                      )}
                     </div>
 
                     {/* Time Column */}
@@ -109,7 +103,7 @@ const Itinerary = () => {
                   <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                 </div>
                 <span className="text-sm md:text-base font-semibold">
-                  TED וספיד דייטינג - פעילויות מקבילות
+                  ספיד דייטינג יתקיים במקביל לפעילויות נוספות
                 </span>
               </div>
             </div>
