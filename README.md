@@ -1,174 +1,96 @@
-# מהחזית לחוזה - Event Landing Page
+# מהחזית לחוזה בשיתוף קהילת ברזל - Event Landing Page
 
-A beautiful, responsive landing page for the "מהחזית לחוזה" (From the Front to a Contract) event by קהילת ברזל (Iron Community).
+A beautiful, modern, and responsive landing page for the "מהחזית לחוזה" (From the Front to a Contract) career event, created in collaboration with קהילת ברזל (Iron Community). This event is specifically designed for Israeli reserve duty personnel returning to the workforce.
 
 ## 🎯 About the Event
 
-This landing page promotes a networking and career event for active reserve duty personnel, featuring:
-- Expert lectures on job searching and career development
-- Job fair with leading companies
-- One-on-one mentoring sessions with career advisors
-- Networking opportunities with employers
+This comprehensive landing page promotes a career networking event featuring multiple tracks and opportunities for reserve duty personnel to connect with leading employers in Israel.
+
+### Event Highlights:
+- 🎤 **Expert Lectures**: TED-style talks on practical and mental tools for job searching post-service
+- 💼 **Job Fair**: Leading companies actively recruiting
+- 🤝 **Speed Dating**: Direct interviews with employers
+- 👥 **Employer Panel**: Insights from hiring managers
+- 💡 **Mentoring Sessions**: One-on-one meetings with career mentors from the "מהחזית לחוזה" initiative
+- ⭐ **Success Stories**: Real testimonials from participants who found jobs through the program
 
 **Event Details:**
-- 📅 Date: November 11, 2025
-- ⏰ Time: 17:00-21:00
-- 📍 Location: Fiverr Offices, Eliezer Kaplan 8, Tel Aviv
+- 📅 **Date**: November 11, 2025
+- ⏰ **Time**: 17:00-21:00
+- 📍 **Location**: Fiverr Offices, Eliezer Kaplan 8, Tel Aviv
 
-## 🚀 Features
+### Participating Companies
+The event features Israel's top employers including:
+- NVIDIA
+- Gong
+- Elbit Systems
+- IAI (Israel Aerospace Industries)
+- Israeli Police
+- Fiverr
+- Ubeya
+- Zap Group
+- Rimon
+- Paz Oil Company
+- Amarel
 
-- ✨ Modern, responsive design built with React + Vite
-- 🎨 Tailwind CSS for beautiful styling
-- 🎭 Smooth animations with Framer Motion
-- 🌍 Full Hebrew RTL (Right-to-Left) support
-- 📱 Mobile-first responsive layout
-- 🚀 Optimized for GitHub Pages deployment
+## 🚀 Key Features
+
+### 🎨 Design & User Experience
+- ✨ **Modern, Professional UI**: Gradient overlays, TED-style circle patterns, and sophisticated color scheme
+- 🖼️ **Visual Impact**: Custom overlapping circular logos, handshake hero image, glass-morphism effects
+- 🎭 **Smooth Animations**: Framer Motion scroll-triggered animations with stagger effects
+- 📱 **Fully Responsive**: Mobile-first design that looks stunning on all devices (phone, tablet, desktop)
+- 🌈 **Interactive Elements**: Hover effects, animated time badges, company logo transitions
+- 🎨 **Custom Scrollbar**: Styled gradient scrollbar for the itinerary section
+
+### 🌍 Internationalization & Accessibility
+- 🇮🇱 **RTL-First Design**: Native Hebrew right-to-left layout throughout
+- 📝 **Professional Typography**: Google Fonts (Assistant & Heebo) optimized for Hebrew
+- ♿ **Accessibility**: Semantic HTML, descriptive alt texts, keyboard navigation support
+- 🎯 **Clear Hierarchy**: Logical content flow and visual hierarchy
+
+### ⚡ Technical Excellence
+- ⚛️ **React 19**: Latest React features with concurrent rendering
+- 🚀 **Vite 7**: Lightning-fast HMR and optimized production builds
+- 🎨 **Tailwind CSS 4**: Utility-first styling with custom design tokens
+- 📦 **Code Splitting**: Automatic optimization for faster page loads
+- 🖼️ **Image Optimization**: Lazy loading and proper sizing strategies
+- 🔧 **ESLint**: Consistent code quality and best practices
+
+### 🚢 Deployment & Production
+- 🌐 **Custom Domain**: Deployed to milconf.com
+- 📤 **One-Command Deploy**: `npm run deploy` handles everything
+- 🔄 **GitHub Pages**: Automated deployment workflow with gh-pages
+- 🔒 **HTTPS**: Secure connection with SSL certificate
+- 📊 **Environment-Aware**: Smart base path handling for dev vs production
 
 ## 📦 Tech Stack
 
-- **React 19** - UI framework
-- **Vite** - Build tool and dev server
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **Lucide React** - Beautiful icon set
-- **gh-pages** - GitHub Pages deployment
-
-## 🛠️ Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd event-landing
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-The site will be available at `http://localhost:5173`
-
-## 🏗️ Project Structure
-
-```
-event-landing/
-├── src/
-│   ├── components/
-│   │   ├── HeroSection.jsx       # Hero with logos and main headline
-│   │   ├── EventDetails.jsx      # Event features checklist
-│   │   ├── EventInfo.jsx         # Date, time, location info
-│   │   ├── Speakers.jsx          # Speaker profiles section
-│   │   ├── CompanyLogos.jsx      # Participating companies
-│   │   ├── RSVP.jsx              # Registration CTA section
-│   │   └── Footer.jsx            # Footer with contact info
-│   ├── assets/                   # Images and static files
-│   ├── App.jsx                   # Main app component
-│   ├── main.jsx                  # Entry point
-│   └── index.css                 # Global styles
-├── index.html                    # HTML template
-├── tailwind.config.js            # Tailwind configuration
-├── vite.config.js                # Vite configuration
-└── package.json                  # Dependencies and scripts
-```
-
-## 🎨 Customization
-
-### Colors
-
-The color palette is defined in `tailwind.config.js`:
-
-```javascript
-colors: {
-  'brand-green': {
-    DEFAULT: '#2d5f3f',
-    light: '#4a8359',
-    dark: '#1e4029',
-  },
-  'brand-blue': {
-    DEFAULT: '#2563eb',
-    light: '#3b82f6',
-  },
-  'brand-beige': {
-    DEFAULT: '#e8e4d9',
-    light: '#f5f3ed',
-  },
-}
-```
-
-### Fonts
-
-Hebrew fonts (Assistant and Heebo) are loaded from Google Fonts in `src/index.css`.
-
-## 📤 Deployment to GitHub Pages
-
-### Prerequisites
-
-1. Create a GitHub repository for your project
-2. Push your code to GitHub
-3. Update the `base` property in `vite.config.js` to match your repository name:
-
-```javascript
-export default defineConfig({
-  plugins: [react()],
-  base: '/your-repo-name/',  // Change this to your repo name
-})
-```
-
-### Deploy Steps
-
-1. Build the project:
-```bash
-npm run build
-```
-
-2. Deploy to GitHub Pages:
-```bash
-npm run deploy
-```
-
-This will:
-- Build your project into the `dist/` folder
-- Create/update the `gh-pages` branch
-- Push the built files to GitHub Pages
-
-3. Enable GitHub Pages in your repository:
-   - Go to Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: `gh-pages` / `root`
-   - Save
-
-Your site will be live at: `https://your-username.github.io/your-repo-name/`
-
-### One-Command Deploy
-
-After initial setup, simply run:
-```bash
-npm run deploy
-```
-
-This automatically builds and deploys your site!
-
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run deploy` - Build and deploy to GitHub Pages
-- `npm run lint` - Run ESLint
-
-## 📝 License
+- **React 19.1.1** - Latest React with concurrent features
+- **Vite 7.1.7** - Next-generation frontend tooling
+- **Tailwind CSS 4.1.16** - Utility-first CSS framework
+- **Framer Motion 12.23.24** - Production-ready animation library
+- **Lucide React 0.548.0** - Beautiful, consistent icon set
+- **PostCSS** - CSS transformations
+- **ESLint** - Code quality and consistency
+- **gh-pages** - Automated GitHub Pages deployment
 
 © 2025 מהחזית לחוזה - קהילת ברזל. All rights reserved.
 
-## 🤝 Contributing
+## 🤝 Contact & Support
 
-This is an event-specific landing page. For questions or updates, please contact the event organizers.
+This is an event-specific landing page for the "From the Front to a Contract" initiative in collaboration with the Iron Community.
+
+## 🙏 Acknowledgments
+
+This project is dedicated to supporting Israeli reserve duty personnel in their transition back to civilian careers. Special thanks to:
+- **מהחזית לחוזה** initiative
+- **קהילת ברזל** (Iron Community)
+- All participating companies and mentors
+- The speakers sharing their expertise
 
 ---
 
 **Built with ❤️ for the Israeli Reserve Duty Community**
+
+*Supporting those who serve, connecting them to meaningful careers*
