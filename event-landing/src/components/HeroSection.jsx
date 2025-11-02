@@ -47,21 +47,30 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6"
+          className="space-y-6 max-w-5xl mx-auto"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.15] 
+            font-hero
+            [text-shadow:_2px_2px_0_rgb(0_0_0_/_80%),_4px_4px_12px_rgb(0_0_0_/_60%)]
+            [-webkit-font-smoothing:antialiased] tracking-tight">
             מהחזית לחוזה בשיתוף קהילת ברזל
           </h1>
 
-          <p className="text-2xl md:text-3xl font-semibold text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+
+          <p className="text-3xl md:text-4xl font-bold text-white
+            font-display
+            [text-shadow:_2px_2px_0_rgb(0_0_0_/_70%),_3px_3px_10px_rgb(0_0_0_/_50%)]">
             מזמינים אתכם לכנס מעסיקים
           </p>
 
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
+          <p className="text-2xl md:text-3xl text-white font-semibold max-w-4xl mx-auto leading-relaxed
+            font-display
+            [text-shadow:_1px_1px_0_rgb(0_0_0_/_60%),_2px_2px_8px_rgb(0_0_0_/_40%)]">
             למען משרתי ומשרתות המילואים
           </p>
 
-          <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
+          <p className="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed font-medium
+            [text-shadow:_1px_1px_0_rgb(0_0_0_/_60%),_2px_2px_8px_rgb(0_0_0_/_40%)]">
             ההזדמנות שלכם להתחבר למעסיקים מובילים
             <br />
             בחזרה לשוק העבודה

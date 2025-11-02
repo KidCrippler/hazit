@@ -42,6 +42,7 @@ export default {
       fontFamily: {
         'hebrew': ['Rubik', 'Assistant', 'Heebo', 'system-ui', 'sans-serif'],
         'display': ['Heebo', 'Assistant', 'sans-serif'],
+        'hero': ['Frank Ruhl Libre', 'Heebo', 'serif'],
       },
       animation: {
         'float': 'float 3s ease-in-out infinite',
