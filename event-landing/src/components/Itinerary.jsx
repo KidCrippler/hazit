@@ -9,7 +9,7 @@ const Itinerary = () => {
     { time: '18:00-18:45', title: 'פאנל מעסיקים', icon: Users, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
     { time: '18:45-19:00', title: 'הפסקה', icon: Coffee, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
     { time: '19:00-20:00', title: 'הרצאות בסגנון TED', subtitle: 'כלים פרקטיים ומנטליים לחיפוש עבודה ביום שאחרי', icon: Mic, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
-    { time: '18:00-21:00', title: 'ספיד דייטינג', subtitle: 'ראיונות עם מעסיקים', icon: Heart, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
+    { time: '19:00-21:00', title: 'ספיד דייטינג', subtitle: 'ראיונות עם מעסיקים', icon: Heart, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
   ];
 
   return (

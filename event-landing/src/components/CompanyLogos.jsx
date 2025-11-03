@@ -81,22 +81,22 @@ const CompanyLogos = () => {
     {
       name: 'Tidhar',
       logo: tidharLogo,
-      jobsUrl: 'https://',
+      jobsUrl: 'https://tidhar.co.il/careers/',
     },
     {
       name: 'Mobileye',
       logo: mobileyeLogo,
-      jobsUrl: 'https://',
+      jobsUrl: 'https://careers.mobileye.com/jobs',
     },
     {
       name: 'Shabak',
       logo: shabakLogo,
-      jobsUrl: 'https://',
+      jobsUrl: 'https://www.shabak.gov.il/career/',
     },
     {
       name: 'Gett',
       logo: gettLogo,
-      jobsUrl: 'https://',
+      jobsUrl: 'https://www.gett.com/careers/?location=tel-aviv-israel#open-positions',
     },
   ];
 
