@@ -10,6 +10,10 @@ import nvidiaLogo from '../../assets/nvidia-logo.png';
 import policeLogo from '../../assets/police-logo.png';
 import iaiLogo from '../../assets/iai-logo.png';
 import gongLogo from '../../assets/gong-logo.png';
+import tidharLogo from '../../assets/tidhar-logo.png';
+import mobileyeLogo from '../../assets/mobileye-logo.png';
+import shabakLogo from '../../assets/shabak-logo.png';
+import gettLogo from '../../assets/gett-logo.png';
 
 const CompanyLogos = () => {
   const fadeInUp = {
@@ -74,6 +78,26 @@ const CompanyLogos = () => {
       logo: gongLogo,
       jobsUrl: 'https://www.gong.io/careers/',
     },
+    {
+      name: 'Tidhar',
+      logo: tidharLogo,
+      jobsUrl: 'https://',
+    },
+    {
+      name: 'Mobileye',
+      logo: mobileyeLogo,
+      jobsUrl: 'https://',
+    },
+    {
+      name: 'Shabak',
+      logo: shabakLogo,
+      jobsUrl: 'https://',
+    },
+    {
+      name: 'Gett',
+      logo: gettLogo,
+      jobsUrl: 'https://',
+    },
   ];
 
   return (
@@ -104,190 +128,40 @@ const CompanyLogos = () => {
             </motion.p>
           </div>
 
-          {/* Mobile layout (4-3-4 pattern) */}
-          <div className="md:hidden">
-            {/* Mobile row 1 - 4 logos */}
-            <div className="flex justify-center items-center gap-4 mb-6">
-              {companies.slice(0, 4).map((company, index) => (
-                <motion.a
-                  key={index}
-                  href={company.jobsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.25,
+          {/* Logo Grid - 5 columns, 3 rows (5-5-5 layout) */}
+          <div className="grid grid-cols-5 gap-4 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
+            {companies.map((company, index) => (
+              <motion.a
+                key={index}
+                href={company.jobsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.25,
+                }}
+                className="flex items-center justify-center w-full h-16 md:h-24 lg:h-28 transition-all duration-300 cursor-pointer"
+              >
+                <img
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  className="max-w-full max-h-full object-contain transition-all duration-300"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'block';
                   }}
-                  className="flex items-center justify-center w-16 h-16 transition-all duration-300 cursor-pointer"
+                />
+                <div 
+                  className="hidden text-brand-green-dark font-bold text-xs md:text-sm text-center"
+                  style={{ display: 'none' }}
                 >
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="max-w-full max-h-full object-contain transition-all duration-300"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
-                    }}
-                  />
-                  <div 
-                    className="hidden text-brand-green-dark font-bold text-xs text-center"
-                    style={{ display: 'none' }}
-                  >
-                    {company.name}
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-            
-            {/* Mobile row 2 - 3 logos (offset) */}
-            <div className="flex justify-center items-center gap-4 mb-6">
-              {companies.slice(4, 7).map((company, index) => (
-                <motion.a
-                  key={index + 4}
-                  href={company.jobsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: (index + 4) * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.25,
-                  }}
-                  className="flex items-center justify-center w-16 h-16 transition-all duration-300 cursor-pointer"
-                >
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="max-w-full max-h-full object-contain transition-all duration-300"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
-                    }}
-                  />
-                  <div 
-                    className="hidden text-brand-green-dark font-bold text-xs text-center"
-                    style={{ display: 'none' }}
-                  >
-                    {company.name}
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-            
-            {/* Mobile row 3 - 4 logos */}
-            <div className="flex justify-center items-center gap-4">
-              {companies.slice(7).map((company, index) => (
-                <motion.a
-                  key={index + 7}
-                  href={company.jobsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: (index + 7) * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.25,
-                  }}
-                  className="flex items-center justify-center w-16 h-16 transition-all duration-300 cursor-pointer"
-                >
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="max-w-full max-h-full object-contain transition-all duration-300"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
-                    }}
-                  />
-                  <div 
-                    className="hidden text-brand-green-dark font-bold text-xs text-center"
-                    style={{ display: 'none' }}
-                  >
-                    {company.name}
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop layout (6-5 pattern) */}
-          <div className="hidden md:block">
-            {/* Desktop row 1 - 6 logos */}
-            <div className="flex justify-center items-center gap-12 md:gap-16 lg:gap-20 mb-8 md:mb-12">
-              {companies.slice(0, 6).map((company, index) => (
-                <motion.a
-                  key={index}
-                  href={company.jobsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.25,
-                  }}
-                  className="flex items-center justify-center w-36 h-24 md:w-44 md:h-28 transition-all duration-300 cursor-pointer"
-                >
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="max-w-full max-h-full object-contain transition-all duration-300"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
-                    }}
-                  />
-                  <div 
-                    className="hidden text-brand-green-dark font-bold text-sm text-center"
-                    style={{ display: 'none' }}
-                  >
-                    {company.name}
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-            
-            {/* Desktop row 2 - 5 logos (offset) */}
-            <div className="flex justify-center items-center gap-12 md:gap-16 lg:gap-20">
-              {companies.slice(6).map((company, index) => (
-                <motion.a
-                  key={index + 6}
-                  href={company.jobsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: (index + 6) * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.25,
-                  }}
-                  className="flex items-center justify-center w-36 h-24 md:w-44 md:h-28 transition-all duration-300 cursor-pointer"
-                >
-                  <img
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    className="max-w-full max-h-full object-contain transition-all duration-300"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
-                    }}
-                  />
-                  <div 
-                    className="hidden text-brand-green-dark font-bold text-sm text-center"
-                    style={{ display: 'none' }}
-                  >
-                    {company.name}
-                  </div>
-                </motion.a>
-              ))}
-            </div>
+                  {company.name}
+                </div>
+              </motion.a>
+            ))}
           </div>
         </motion.div>
       </div>
