@@ -12,6 +12,12 @@ import iaiLogo from '../../assets/iai-logo.png';
 import gongLogo from '../../assets/gong-logo.png';
 
 const CompanyLogos = () => {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true }
+  };
+
   const companies = [
     {
       name: 'פז',
@@ -83,22 +89,18 @@ const CompanyLogos = () => {
           {/* Section Header */}
           <div className="text-center mb-12 md:mb-16">
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              {...fadeInUp}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold text-brand-green-dark mb-4"
             >
-              חברות משתתפות
-            </motion.h2>
+              החברות שישתתפו בכנס
+            </motion.h2>            
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              {...fadeInUp}
               transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-lg md:text-xl text-brand-green-dark/80 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-brand-green-dark font-bold max-w-3xl mx-auto mt-6 mb-2"
             >
-              החברות הבאות ישתתפו בכנס וישלחו נציגים לשיחות אישיות עם משתתפים ומשתתפות מהמילואים
+              👉 לחיצה על הלוגו תעביר אתכם לעמוד המשרות של החברה 👈
             </motion.p>
           </div>
 
