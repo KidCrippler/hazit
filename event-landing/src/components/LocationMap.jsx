@@ -130,19 +130,6 @@ const LocationMap = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Additional info */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mt-6 md:mt-8 text-center"
-          >
-            <p className="text-sm md:text-base text-gray-600">
-              חנייה זמינה בסביבה • נגישות מלאה לכיסאות גלגלים
-            </p>
-          </motion.div>
         </div>
       </div>
     </section>
