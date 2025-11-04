@@ -36,7 +36,7 @@ const CompanyLogos = () => {
     {
       name: 'אלביט מערכות',
       logo: elbitLogo,
-      jobsUrl: 'https://elbitsystemscareer.com/',
+      jobsUrl: 'https://bit.ly/4oSREJr',
     },
     {
       name: 'Ubeya',
@@ -66,7 +66,7 @@ const CompanyLogos = () => {
     {
       name: 'משטרת ישראל',
       logo: policeLogo,
-      jobsUrl: 'https://www.police.gov.il/join/CandidateForm/jobs',
+      jobsUrl: 'https://go.gov.il/kv319',
     },
     {
       name: 'התעשייה האוירית',
@@ -76,7 +76,7 @@ const CompanyLogos = () => {
     {
       name: 'Gong',
       logo: gongLogo,
-      jobsUrl: 'https://www.gong.io/careers/',
+      jobsUrl: 'https://job-boards.greenhouse.io/gongio?gh_src=po9ztn7q6us&offices%5B%5D=4001759006',
     },
     {
       name: 'Tidhar',
@@ -91,12 +91,12 @@ const CompanyLogos = () => {
     {
       name: 'Shabak',
       logo: shabakLogo,
-      jobsUrl: 'https://www.shabak.gov.il/career/',
+      jobsUrl: 'https://bit.ly/3Lk1RjG',
     },
     {
       name: 'Gett',
       logo: gettLogo,
-      jobsUrl: 'https://www.gett.com/careers/?location=tel-aviv-israel#open-positions',
+      jobsUrl: 'https://www.gett.com/careers/?coref=1.10.s2B_766',
     },
   ];
 
