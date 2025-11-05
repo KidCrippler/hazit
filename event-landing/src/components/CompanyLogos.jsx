@@ -51,7 +51,7 @@ const CompanyLogos = () => {
     {
       name: 'אמארל',
       logo: amarelLogo,
-      jobsUrl: 'https://www.amarel.net/career',
+      jobsUrl: 'https://amarel.inwise.net/imonim',
     },
     {
       name: 'קבוצת זאפ',
