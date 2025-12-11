@@ -1,0 +1,33 @@
+{
+    "mcpServers":
+    {
+        "n8n-mcp":
+        {
+            "command": "npx",
+            "args":
+            [
+                "n8n-mcp"
+            ],
+            "env":
+            {
+                "MCP_MODE": "stdio",
+                "LOG_LEVEL": "error",
+                "DISABLE_CONSOLE_OUTPUT": "true",
+                "N8N_API_URL": "https://primary-production-759d0.up.railway.app",
+                "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZDM5YWY1Ny1lMjhkLTRiMjEtOTZkMy02MzEyOGNhODAzMzciLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzU3Mjg4MTE3fQ.Wf4l8ex-Uv2AgpyDQ8HUamm8Ckm9YsTUDSGnOzNdALA"
+            }
+        },
+        "context7":
+        {
+            "command": "npx",
+            "args":
+            [
+                "-y",
+                "mcp-remote",
+                "https://mcp.context7.com/mcp",
+                "--header",
+                "CONTEXT7_API_KEY: ctx7sk-a58c3d38-fd74-45df-b3d9-155fab77f62d"
+            ]
+        }
+    }
+}
