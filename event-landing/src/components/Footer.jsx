@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="text-white py-8 md:py-10" style={{ backgroundColor: '#1e4029' }}>
+    <footer className="text-white py-8 md:py-10" style={{ backgroundColor: '#5C6A40' }}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0 }}
@@ -20,9 +20,9 @@ const Footer = () => {
           
           {/* Center Column - Event Details */}
           <div className="space-y-2">
-            <p className="text-sm font-semibold">11.11.2025 | 17:00-21:00</p>
-            <p className="text-sm opacity-90">Fiverr</p>
-            <p className="text-xs opacity-75">אליעזר קפלן 8, תל אביב</p>
+            <p className="text-sm font-semibold">29.12.2025 | 17:00-21:00</p>
+            <p className="text-sm opacity-90">IMAGEN</p>
+            <p className="text-xs opacity-75">אריאל שרון 4, גבעתיים</p>
           </div>
           
           {/* Left Column - LinkedIn */}

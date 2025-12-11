@@ -1,39 +1,39 @@
-import { Presentation, Briefcase, Users, UserPlus } from 'lucide-react';
+import { Linkedin, Camera, Beer, Sparkles } from 'lucide-react';
 import TEDBackground from './TEDBackground';
 
 const EventDetails = () => {
   const features = [
     {
-      icon: Presentation,
-      title: 'הרצאות',
-      description: 'מומחים בתחום העבודה והקריירה',
-      iconBg: '#bfdbfe',
-      iconColor: '#1e40af',
-      accentColor: '#2563eb'
+      icon: Linkedin,
+      title: 'סדנת לינקדאין',
+      description: 'עם רועי משה - בניית פרופיל מקצועי שמושך מגייסות ויצירת נטוורקינג חכם',
+      iconBg: '#A8B687',
+      iconColor: '#5C6A40',
+      accentColor: '#8B9E5F'
     },
     {
-      icon: Briefcase,
-      title: 'יריד משרות',
-      description: 'חברות מובילות מחפשות עובדים',
-      iconBg: '#8ccba8',
-      iconColor: '#1e4029',
-      accentColor: '#4a8359'
+      icon: Camera,
+      title: 'צילום תמונת פרופיל',
+      description: 'צילום מקצועי על ידי צלם מומחה לתמונת לינקדאין מנצחת',
+      iconBg: '#FFCDD6',
+      iconColor: '#C81F4A',
+      accentColor: '#FF6B8A'
     },
     {
-      icon: Users,
-      title: 'ראיונות עם חברות',
-      description: 'הזדמנות להתחבר למגייסים',
-      iconBg: '#e9d5ff',
-      iconColor: '#6b21a8',
-      accentColor: '#9333ea'
+      icon: Beer,
+      title: 'מינגלינג ופיצות',
+      description: 'אווירה נינוחה עם אוכל ושתייה לנטוורקינג',
+      iconBg: '#DDE2CD',
+      iconColor: '#5C6A40',
+      accentColor: '#8B9E5F'
     },
     {
-      icon: UserPlus,
-      title: 'מפגשים עם מנטורים',
-      description: 'ממיזם "מהחזית לחוזה"',
-      iconBg: '#fed7aa',
-      iconColor: '#9a3412',
-      accentColor: '#ea580c'
+      icon: Sparkles,
+      title: 'כלים פרקטיים',
+      description: 'שימוש בכלי AI לכתיבת קורות חיים מותאמים אישית',
+      iconBg: '#FFE4E8',
+      iconColor: '#A71D43',
+      accentColor: '#FF6B8A'
     },
   ];
 

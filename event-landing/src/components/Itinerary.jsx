@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
-import { Clock, Users, Coffee, Mic, Heart, Sparkles } from 'lucide-react';
+import { Users, Coffee, Mic, Sparkles, Camera, Linkedin } from 'lucide-react';
 
 const Itinerary = () => {
   const events = [
-    { time: '17:00-17:30', title: 'התכנסות', icon: Users, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
-    { time: '17:30-17:50', title: 'דברי פתיחה', subtitle: 'ירין ודניאלה', icon: Mic, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
-    { time: '17:50-18:00', title: 'סיפור הצלחה - אוריאל', subtitle: 'איך עברתי מהחזית לחוזה', icon: Sparkles, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
-    { time: '18:00-18:45', title: 'פאנל מעסיקים', icon: Users, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
-    { time: '18:45-19:00', title: 'הפסקה', icon: Coffee, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
-    { time: '19:00-20:00', title: 'הרצאות בסגנון TED', subtitle: 'כלים פרקטיים ומנטליים לחיפוש עבודה ביום שאחרי', icon: Mic, gradient: 'linear-gradient(to bottom right, #2d5f3f, #1e4029)' },
-    { time: '19:00-21:00', title: 'ספיד דייטינג', subtitle: 'ראיונות עם מעסיקים', icon: Heart, gradient: 'linear-gradient(to bottom right, #4a8359, #2d5f3f)' },
+    { time: '17:00-18:00', title: 'התכנסות, מינגלינג וצילומים', subtitle: 'צילום תמונת פרופיל מקצועי', icon: Camera, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
+    { time: '18:00-18:15', title: 'דברי פתיחה', subtitle: 'מהחזית לחוזה', icon: Mic, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
+    { time: '18:15-19:15', title: 'סדנת לינקדאין', subtitle: 'עם רועי משה - בניית פרופיל ונטוורקינג חכם', icon: Linkedin, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
+    { time: '19:15-19:30', title: 'הפסקה', icon: Coffee, gradient: 'linear-gradient(to bottom right, #A8B687, #748650)' },
+    { time: '19:30-21:00', title: 'המשך סדנה', subtitle: 'כלי AI לקורות חיים ועוד', icon: Sparkles, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
   ];
 
   return (
@@ -23,10 +21,10 @@ const Itinerary = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-green-dark mb-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-olive-dark mb-2">
             לו״ז אירוע
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-brand-green-light to-brand-green mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-olive to-coral mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Modern Table Design */}
@@ -38,7 +36,7 @@ const Itinerary = () => {
           className="max-w-3xl mx-auto"
         >
           {/* Table Container with Glass Effect */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-brand-green/10">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-olive/10">
             
 
             {/* Scrollable Table Body */}
@@ -55,10 +53,10 @@ const Itinerary = () => {
                     transition={{ duration: 0.4, delay: index * 0.08 }}
                     viewport={{ once: true }}
                     className={`
-                      flex items-center justify-between p-4 md:p-5 border-b border-brand-green/5
+                      flex items-center justify-between p-4 md:p-5 border-b border-olive/5
                       min-h-[88px] md:min-h-[96px]
                       ${index % 2 === 0 ? 'bg-brand-beige/20' : 'bg-white'}
-                      hover:bg-brand-green/5 transition-all duration-300 group
+                      hover:bg-olive/5 transition-all duration-300 group
                       ${isLastTwo ? 'relative overflow-hidden' : ''}
                     `}
                   >
@@ -69,11 +67,11 @@ const Itinerary = () => {
 
                     {/* Event Title Column */}
                     <div className={`relative z-10 flex-1 flex flex-col ${!event.subtitle ? 'justify-center' : ''}`}>
-                      <h3 className="text-lg md:text-xl font-bold text-brand-green-dark group-hover:text-brand-green transition-colors duration-300">
+                      <h3 className="text-lg md:text-xl font-bold text-olive-dark group-hover:text-olive transition-colors duration-300">
                         {event.title}
                       </h3>
                       {event.subtitle && (
-                        <p className="text-sm md:text-base text-brand-green/80 font-medium mt-1">
+                        <p className="text-sm md:text-base text-olive/80 font-medium mt-1">
                           {event.subtitle}
                         </p>
                       )}
@@ -82,11 +80,11 @@ const Itinerary = () => {
                     {/* Time Column */}
                     <div className="flex items-center gap-3 relative z-10">
                       <div 
-                        className="px-4 py-2 rounded-xl font-bold shadow-lg group-hover:scale-105 transition-transform duration-300 flex items-center gap-2 min-w-[140px] md:min-w-[160px] justify-center"
+                        className="px-4 py-3 rounded-xl font-bold shadow-lg group-hover:scale-105 transition-transform duration-300 flex items-center gap-3 min-w-[140px] md:min-w-[160px] justify-center"
                         style={{ background: event.gradient }}
                       >
-                        <Icon className="w-4 h-4 text-white" strokeWidth={2.5} />
-                        <span className="text-sm md:text-base text-white">{event.time}</span>
+                        {Icon && <Icon className="w-5 h-5 md:w-6 md:h-6 text-white flex-shrink-0" strokeWidth={2} />}
+                        <span className="text-sm md:text-base text-white font-semibold">{event.time}</span>
                       </div>
                     </div>
                   </motion.div>
@@ -94,16 +92,16 @@ const Itinerary = () => {
               })}
             </div>
 
-            {/* Footer with Parallel Sessions Note */}
-            <div className="bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10 p-4 border-t-2 border-purple-300/20">
-              <div className="flex items-center justify-center gap-2 text-brand-green-dark">
+            {/* Footer with Event Note */}
+            <div className="bg-gradient-to-r from-olive/10 via-coral/10 to-olive/10 p-4 border-t-2 border-olive/20">
+              <div className="flex items-center justify-center gap-2 text-olive-dark">
                 <div className="flex gap-1">
-                  <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
-                  <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                  <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                  <div className="w-2 h-2 rounded-full bg-olive animate-pulse"></div>
+                  <div className="w-2 h-2 rounded-full bg-coral animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-2 h-2 rounded-full bg-olive animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                 </div>
                 <span className="text-sm md:text-base font-semibold">
-                  ספיד דייטינג יתקיים במקביל לפעילויות נוספות
+                  צילומים יתקיימו לאורך כל האירוע
                 </span>
               </div>
             </div>
@@ -121,12 +119,12 @@ const Itinerary = () => {
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #4a8359, #2d5f3f, #1e4029);
+          background: linear-gradient(to bottom, #8B9E5F, #5C6A40);
           border-radius: 10px;
           border: 2px solid rgba(255, 255, 255, 0.2);
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #2d5f3f, #1e4029);
+          background: linear-gradient(to bottom, #5C6A40, #4D5736);
           border-color: rgba(255, 255, 255, 0.4);
         }
       `}</style>

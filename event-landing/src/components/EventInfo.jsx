@@ -6,8 +6,8 @@ const EventInfo = () => {
     {
       icon: Calendar,
       label: 'תאריך',
-      mainInfo: '11.11.2025',
-      subInfo: 'יום שלישי',
+      mainInfo: '29.12.2025',
+      subInfo: 'יום ראשון',
     },
     {
       icon: Clock,
@@ -18,8 +18,8 @@ const EventInfo = () => {
     {
       icon: MapPin,
       label: 'מיקום',
-      mainInfo: 'משרדי Fiverr',
-      subInfo: 'אליעזר קפלן 8, תל אביב',
+      mainInfo: 'משרדי IMAGEN',
+      subInfo: 'אריאל שרון 4, גבעתיים - קומה 35',
     },
   ];
 

@@ -1,9 +1,11 @@
 import HeroSection from './components/HeroSection';
 import EventDetails from './components/EventDetails';
 import EventInfo from './components/EventInfo';
+import WorkshopLeader from './components/WorkshopLeader';
 import Itinerary from './components/Itinerary';
-import Speakers from './components/Speakers';
-import CompanyLogos from './components/CompanyLogos';
+import PhotoGallery from './components/PhotoGallery';
+import PartnerLogos from './components/PartnerLogos';
+import RegistrationForm from './components/RegistrationForm';
 import LocationMap from './components/LocationMap';
 import Footer from './components/Footer';
 
@@ -13,9 +15,11 @@ function App() {
       <HeroSection />
       <EventDetails />
       <EventInfo />
+      <WorkshopLeader />
       <Itinerary />
-      <Speakers />
-      <CompanyLogos />
+      <PhotoGallery />
+      <PartnerLogos />
+      <RegistrationForm />
       <LocationMap />
       <Footer />
     </div>

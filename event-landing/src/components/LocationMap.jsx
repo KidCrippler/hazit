@@ -37,10 +37,14 @@ const LocationMap = () => {
   }, [shouldLoadMap]);
 
   const locationData = {
-    name: 'משרדי Fiverr',
-    address: 'אליעזר קפלן 8, תל אביב',
-    embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.828799999999!2d34.788!3d32.078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7a7e3a09ab%3A0x1234567890abcdef!2sEliezer%20Kaplan%20St%208%2C%20Tel%20Aviv-Yafo!5e0!3m2!1sen!2sil!4v1234567890',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=אליעזר+קפלן+8+תל+אביב'
+    name: 'משרדי IMAGEN',
+    address: 'אריאל שרון 4, גבעתיים - קומה 35',
+    embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.1!2d34.8116!3d32.0720!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b9e8b3a5f7d%3A0x1234567890abcdef!2sAriel%20Sharon%204%2C%20Givatayim!5e0!3m2!1sen!2sil!4v1234567890',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=אריאל+שרון+4+גבעתיים',
+    transportation: {
+      train: 'תחנת סבידור מרכז - הליכה של 7 דקות',
+      parking: 'חניון ברוריה או חניון הלולאה'
+    }
   };
 
   return (
@@ -60,13 +64,29 @@ const LocationMap = () => {
           >
             <h2
               id="location-map-heading"
-              className="text-3xl md:text-4xl font-bold text-brand-green-dark mb-3 md:mb-4"
+              className="text-3xl md:text-4xl font-bold text-olive-dark mb-3 md:mb-4"
             >
               איך מגיעים?
             </h2>
-            <p className="text-lg md:text-xl text-brand-green-dark/80">
+            <p className="text-lg md:text-xl text-olive-dark/80 mb-4">
               {locationData.name} - {locationData.address}
             </p>
+            
+            {/* Transportation Info */}
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center text-sm md:text-base">
+              <div className="flex items-center gap-2 bg-olive/10 px-4 py-2 rounded-full">
+                <svg className="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+                <span className="font-medium text-olive-dark">ברכבת: {locationData.transportation.train}</span>
+              </div>
+              <div className="flex items-center gap-2 bg-coral/10 px-4 py-2 rounded-full">
+                <svg className="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+                <span className="font-medium text-coral-dark">חניה: {locationData.transportation.parking}</span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Map Container */}
@@ -80,7 +100,7 @@ const LocationMap = () => {
           >
             {/* Gradient border effect */}
             <div
-              className="absolute -inset-2 bg-gradient-to-br from-brand-green/20 via-transparent to-brand-orange/20 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"
+              className="absolute -inset-2 bg-gradient-to-br from-olive/20 via-transparent to-coral/20 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"
               aria-hidden="true"
             ></div>
 
@@ -107,8 +127,8 @@ const LocationMap = () => {
                     aria-label="המפה נטענת"
                   >
                     <div className="flex flex-col items-center gap-3">
-                      <MapPin className="w-12 h-12 text-brand-green/30 animate-pulse" />
-                      <span className="text-brand-green-dark/60 text-sm">טוען מפה...</span>
+                      <MapPin className="w-12 h-12 text-olive/30 animate-pulse" />
+                      <span className="text-olive-dark/60 text-sm">טוען מפה...</span>
                     </div>
                   </div>
                 )}
@@ -120,7 +140,7 @@ const LocationMap = () => {
                   href={locationData.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-white/95 backdrop-blur-sm rounded-full text-brand-green hover:text-white hover:bg-brand-green font-medium text-sm md:text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
+                  className="inline-flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-white/95 backdrop-blur-sm rounded-full text-olive hover:text-white hover:bg-olive font-medium text-sm md:text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-olive focus:ring-offset-2"
                   aria-label={`פתח את ${locationData.name} ב-Google Maps בכרטיסייה חדשה`}
                 >
                   <MapPin className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
