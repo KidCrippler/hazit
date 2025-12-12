@@ -9,21 +9,25 @@ const WorkshopLeader = () => {
       icon: Linkedin,
       title: 'בניית פרופיל מקצועי',
       description: 'כיצד לבנות פרופיל שמושך מגייסות',
+      bgColor: '#0077B5', // LinkedIn blue
     },
     {
       icon: Users,
       title: 'נטוורקינג חכם',
       description: 'אונליין ובמפגשים פרונטאליים',
+      bgColor: '#8B5CF6', // Purple
     },
     {
       icon: Sparkles,
       title: 'כלי AI',
       description: 'לכתיבת קורות חיים מותאמים אישית',
+      bgColor: '#F59E0B', // Amber/Orange
     },
     {
       icon: Brain,
       title: 'כלים פרקטיים',
       description: 'מזווית ראייה של מגייס טכנולוגי מנוסה',
+      bgColor: '#10B981', // Emerald green
     },
   ];
 
@@ -120,8 +124,8 @@ const WorkshopLeader = () => {
                       >
                         {/* Icon */}
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-olive to-olive-dark flex items-center justify-center shadow-lg">
-                            <Icon className="w-6 h-6 text-white" strokeWidth={2} />
+                          <div className="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg" style={{ backgroundColor: topic.bgColor }}>
+                            {Icon && <Icon style={{ color: '#ffffff', stroke: '#ffffff', strokeWidth: 2.5, fill: 'none', width: '28px', height: '28px' }} />}
                           </div>
                         </div>
                         

@@ -5,6 +5,7 @@ import atmosphere1 from '../../assets/gallery/atmosphere-1.jpg';
 import atmosphere2 from '../../assets/gallery/atmosphere-2.jpg';
 import atmosphere3 from '../../assets/gallery/atmosphere-3.jpg';
 import photoBooth from '../../assets/gallery/photo-booth.jpg';
+import TEDBackground from './TEDBackground';
 
 const PhotoGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,8 +42,9 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section className="bg-white py-10 md:py-16 lg:py-20">
-      <div className="container mx-auto px-6">
+    <section className="py-10 md:py-16 lg:py-20 relative overflow-hidden">
+      <TEDBackground backgroundColor="rgba(249, 250, 251, 1)" />
+      <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

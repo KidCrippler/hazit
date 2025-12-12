@@ -24,7 +24,9 @@ const EventInfo = () => {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-brand-green via-brand-green to-emerald-600 py-10 md:py-24 overflow-hidden">
+    <section className="relative py-10 md:py-24 overflow-hidden" style={{
+      background: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40, #4A5533)'
+    }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -87,7 +89,7 @@ const EventInfo = () => {
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-300 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl" style={{ backgroundColor: '#A8B687' }}></div>
       </div>
     </section>
   );

@@ -79,11 +79,11 @@ const RegistrationForm = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-olive via-olive-dark to-olive-dark py-12 md:py-20 lg:py-24 overflow-hidden">
+    <section id="registration" className="relative bg-white py-12 md:py-20 lg:py-24 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-coral rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-olive rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-coral rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -94,10 +94,10 @@ const RegistrationForm = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-olive-dark mb-4">
             הרשמה לאירוע
           </h2>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             מספר המקומות מוגבל בהחלט - מהרו להירשם!
           </p>
         </motion.div>
@@ -239,7 +239,7 @@ const RegistrationForm = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-gradient-to-l from-coral to-coral-dark text-white font-bold text-lg py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-coral/30"
+                className="w-full bg-olive-dark hover:bg-olive text-white font-bold text-lg py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-olive/30"
               >
                 שלח הרשמה
               </motion.button>

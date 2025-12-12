@@ -4,28 +4,39 @@ import mehazitLogo from '../../assets/hazit.png';
 import imagenLogo from '../../assets/imagen-logo.png';
 
 const HeroSection = () => {
+  const scrollToRegistration = () => {
+    const element = document.getElementById('registration');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className="relative min-h-[80vh] overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${handshakeImg})` }}
       />
 
-      {/* Olive/Coral Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-olive/70 via-olive-dark/60 to-olive-dark/80" />
+      {/* Darker Gradient Overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
-      <div className="relative z-10 container mx-auto px-6 py-12 md:py-20">
+      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
         {/* Logo Section - Overlapping */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center items-center mb-8 md:mb-12"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex justify-center items-center mb-12 md:mb-16"
         >
           <div className="relative flex items-center justify-center">
             {/* Mehazit Logo - Right (RTL) */}
-            <div className="relative z-10 w-28 h-28 md:w-36 md:h-36 rounded-full bg-white shadow-2xl overflow-hidden flex items-center justify-center p-3 md:p-4 border-4 border-white">
+            <div className="relative z-20 w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 
+              rounded-full overflow-hidden
+              bg-white
+              shadow-[0_8px_30px_rgb(0,0,0,0.4)] 
+              flex items-center justify-center">
               <img
                 src={mehazitLogo}
                 alt="מהחזית לחוזה"
@@ -34,7 +45,11 @@ const HeroSection = () => {
             </div>
 
             {/* IMAGEN Logo - Left (RTL) - Overlapping */}
-            <div className="relative z-20 -mr-10 md:-mr-14 w-28 h-28 md:w-36 md:h-36 rounded-full bg-coral shadow-2xl overflow-hidden flex items-center justify-center p-4 md:p-5 border-4 border-white">
+            <div className="relative z-10 -mr-6 md:-mr-8 lg:-mr-10 w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 
+              rounded-full overflow-hidden
+              bg-coral
+              shadow-[0_8px_30px_rgb(0,0,0,0.4)] 
+              flex items-center justify-center">
               <img
                 src={imagenLogo}
                 alt="IMAGEN"
@@ -44,87 +59,91 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Main Content */}
+        {/* Main Content - Clean Typography */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center space-y-6 max-w-5xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="text-center space-y-8 md:space-y-10 max-w-5xl mx-auto"
         >
-          {/* Main Headline - Similar to save-the-date */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight 
-            font-display uppercase tracking-wide
-            [text-shadow:_3px_3px_0_rgb(0_0_0_/_40%)]">
-            UPGRADE YOUR
-            <br />
-            LINKEDIN
-          </h1>
-
-          {/* Hebrew Description */}
-          <div className="bg-white/95 rounded-2xl p-6 md:p-10 shadow-2xl max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-olive mb-4">
-              סדנת מיתוג אישי - מהחזית לחוזה
-            </h2>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-              מהחזית לחוזה בשיתוף חברת IMAGEN מזמינים אתכם
+          {/* Main Headline - Clean and Bold */}
+          <div className="space-y-6 md:space-y-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight 
+              font-display uppercase tracking-wide
+              [text-shadow:_3px_3px_10px_rgb(0_0_0_/_70%)]">
+              UPGRADE YOUR
               <br />
-              לערב מיוחד במיוחד בשבילכם:
-            </p>
-            <p className="text-xl md:text-2xl font-bold text-olive-dark">
-              איך לבנות מיתוג אישי חזק ונטוורקינג חכם בלינקדאין
-            </p>
+              LINKEDIN
+            </h1>
+            
+            <div className="text-white space-y-4 md:space-y-5">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold
+                [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
+                סדנת מיתוג אישי - מהחזית לחוזה
+              </h2>
+              
+              <p className="text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed
+                [text-shadow:_1px_1px_6px_rgb(0_0_0_/_50%)]">
+                מהחזית לחוזה בשיתוף חברת IMAGEN מזמינים אתכם
+                <br />
+                לערב מיוחד במיוחד בשבילכם:
+              </p>
+              
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mx-auto
+                [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
+                איך לבנות מיתוג אישי חזק ונטוורקינג חכם בלינקדאין
+              </p>
+            </div>
           </div>
 
-          {/* Event Details Pills */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-8">
-            {/* Date */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-coral text-white px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3 font-bold"
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          {/* Event Details - Integrated inline */}
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-white text-lg md:text-xl font-bold pt-4">
+            <div className="flex items-center gap-2 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_50%)]">
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <div className="text-right">
-                <div className="text-sm opacity-90">DEC</div>
-                <div className="text-2xl">29</div>
-              </div>
-            </motion.div>
-
-            {/* Time */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-olive-dark text-white px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3 font-bold"
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <span>29 בדצמבר</span>
+            </div>
+            
+            <div className="text-white/60 text-2xl font-light">•</div>
+            
+            <div className="flex items-center gap-2 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_50%)]">
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <div className="text-right">
-                <div className="text-sm opacity-90">שעה</div>
-                <div className="text-xl">17:00</div>
-              </div>
-            </motion.div>
-
-            {/* Location */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-white text-olive-dark px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3 font-bold"
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <span>17:00</span>
+            </div>
+            
+            <div className="text-white/60 text-2xl font-light">•</div>
+            
+            <div className="flex items-center gap-2 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_50%)]">
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <div className="text-right">
-                <div className="text-sm">IMAGEN,</div>
-                <div className="text-lg">TEL AVIV</div>
-              </div>
-            </motion.div>
+              <span>IMAGEN, תל אביב</span>
+            </div>
           </div>
 
-          {/* Limited Spots Warning */}
-          <p className="text-sm md:text-base text-white/90 font-medium mt-4">
-            מספר המקומות מוגבל בהחלט. מהרו להירשם!
-          </p>
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="pt-4"
+          >
+            <button 
+              onClick={scrollToRegistration}
+              className="text-lg md:text-xl text-white font-bold 
+              [text-shadow:_1px_1px_6px_rgb(0_0_0_/_50%)]
+              bg-coral/20 backdrop-blur-sm inline-block px-8 py-3 rounded-full border-2 border-white/30
+              hover:bg-coral/30 hover:border-white/50 hover:scale-105
+              active:scale-95
+              transition-all duration-300 ease-out
+              cursor-pointer">
+              מספר המקומות מוגבל - מהרו להירשם!
+            </button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

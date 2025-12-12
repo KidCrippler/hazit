@@ -3,11 +3,11 @@ import { Users, Coffee, Mic, Sparkles, Camera, Linkedin } from 'lucide-react';
 
 const Itinerary = () => {
   const events = [
-    { time: '17:00-18:00', title: 'התכנסות, מינגלינג וצילומים', subtitle: 'צילום תמונת פרופיל מקצועי', icon: Camera, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
-    { time: '18:00-18:15', title: 'דברי פתיחה', subtitle: 'מהחזית לחוזה', icon: Mic, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
-    { time: '18:15-19:15', title: 'סדנת לינקדאין', subtitle: 'עם רועי משה - בניית פרופיל ונטוורקינג חכם', icon: Linkedin, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
+    { time: '17:00-18:00', title: 'התכנסות, מינגלינג וצילומים', subtitle: 'צילום תמונת פרופיל מקצועית', icon: Camera, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
+    { time: '18:00-18:15', title: 'דברי פתיחה', subtitle: 'מהחזית לחוזה', icon: Mic, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
+    { time: '18:15-19:15', title: 'סדנת לינקדאין', subtitle: 'עם רועי משה - בניית פרופיל ונטוורקינג חכם', icon: Linkedin, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
     { time: '19:15-19:30', title: 'הפסקה', icon: Coffee, gradient: 'linear-gradient(to bottom right, #A8B687, #748650)' },
-    { time: '19:30-21:00', title: 'המשך סדנה', subtitle: 'כלי AI לקורות חיים ועוד', icon: Sparkles, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
+    { time: '19:30-21:00', title: 'המשך סדנה', subtitle: 'כלי AI לקורות חיים ועוד', icon: Linkedin, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
   ];
 
   return (
@@ -110,7 +110,7 @@ const Itinerary = () => {
       </div>
 
       {/* Enhanced scrollbar styles */}
-      <style jsx>{`
+      <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 10px;
         }

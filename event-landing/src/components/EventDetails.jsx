@@ -64,20 +64,20 @@ const EventDetails = () => {
                 {/* Icon */}
                 <div className="flex-shrink-0">
                   <div
-                    className="w-14 h-14 md:w-18 md:h-18 rounded-xl flex items-center justify-center shadow-md"
+                    className="w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center shadow-lg"
                     style={{ backgroundColor: feature.iconBg }}
                   >
-                    <Icon
-                      className="w-7 h-7 md:w-9 md:h-9"
+                    {Icon && <Icon
+                      className="w-8 h-8 md:w-10 md:h-10"
                       strokeWidth={2}
                       style={{ color: feature.iconColor }}
-                    />
+                    />}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 text-right">
-                  <h3 className="text-xl md:text-3xl font-bold text-brand-green-dark mb-3">
+                  <h3 className="text-xl md:text-3xl font-bold text-olive-dark mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
