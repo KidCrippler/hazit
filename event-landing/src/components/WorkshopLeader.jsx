@@ -35,26 +35,25 @@ const WorkshopLeader = () => {
     <section className="py-10 md:py-16 lg:py-20 relative overflow-hidden">
       <TEDBackground backgroundColor="rgba(249, 250, 251, 1)" />
       <div className="container mx-auto px-6 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center text-olive-dark mb-4"
-        >
-          מנחה הסדנה
-        </motion.h2>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="text-lg md:text-xl text-center text-gray-600 mb-12 md:mb-16"
-        >
-          מומחה לינקדאין ומגייס טכנולוגי מנוסה
-        </motion.p>
-
+        <div className="text-center mb-12 md:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-olive-dark mb-3"
+          >
+            על הסדנה
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="w-20 h-1 bg-coral mx-auto rounded-full"
+          />
+        </div>
+      
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Roi Moshe Profile */}
@@ -108,7 +107,7 @@ const WorkshopLeader = () => {
             >
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-8 border border-olive/10">
                 <h4 className="text-2xl md:text-3xl font-bold text-olive-dark mb-6 text-center md:text-right">
-                  מה בתוכנית?
+                  נושאי הסדנה:
                 </h4>
                 <div className="space-y-4">
                   {workshopTopics.map((topic, index) => {

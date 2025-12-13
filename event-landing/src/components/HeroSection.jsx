@@ -79,14 +79,14 @@ const HeroSection = () => {
             <div className="text-white space-y-4 md:space-y-5">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold
                 [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
-                סדנת מיתוג אישי - מהחזית לחוזה
+                ערב מיתוג - מהחזית לחוזה
               </h2>
               
               <p className="text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed
                 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_50%)]">
-                מהחזית לחוזה בשיתוף חברת IMAGEN מזמינים אתכם
+                מילואימניקים ומילואימניקיות - מהחזית לחוזה בשיתוף חברת IMAGEN
                 <br />
-                לערב מיוחד במיוחד בשבילכם:
+                מזמינים אתכם לערב מיוחד:
               </p>
               
               <p className="text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mx-auto
@@ -121,7 +121,7 @@ const HeroSection = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span>IMAGEN, תל אביב</span>
+              <span>IMAGEN, גבעתיים</span>
             </div>
           </div>
 

@@ -12,6 +12,11 @@ const PhotoGallery = () => {
 
   const photos = [
     {
+      src: photoBooth,
+      alt: 'עמדת צילום מקצועית',
+      caption: 'עמדת צילום ב-IMAGEN'
+    },
+    {
       src: atmosphere1,
       alt: 'אווירת האירוע - נטוורקינג',
       caption: 'נטוורקינג ומפגשים'
@@ -19,17 +24,12 @@ const PhotoGallery = () => {
     {
       src: atmosphere2,
       alt: 'אווירת האירוע - צילומים',
-      caption: 'צילומים מקצועיים'
+      caption: 'תוכן מרתק'
     },
     {
       src: atmosphere3,
       alt: 'אווירת האירוע - סדנה',
       caption: 'סדנאות אינטראקטיביות'
-    },
-    {
-      src: photoBooth,
-      alt: 'עמדת צילום מקצועית',
-      caption: 'עמדת צילום ב-IMAGEN'
     },
   ];
 
