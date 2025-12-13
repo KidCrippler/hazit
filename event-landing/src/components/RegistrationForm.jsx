@@ -340,7 +340,7 @@ const RegistrationForm = () => {
       formDataToSend.append('fileName', formData.file.name);
 
         // Send to n8n webhook
-        const response = await fetch('https://primary-production-759d0.up.railway.app/webhook-test/hazit-registration', {
+        const response = await fetch('https://primary-production-759d0.up.railway.app/webhook/hazit-registration', {
           method: 'POST',
           body: formDataToSend,
         });
