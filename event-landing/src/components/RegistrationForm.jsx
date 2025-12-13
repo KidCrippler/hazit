@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { AlertCircle, Upload, CheckCircle } from 'lucide-react';
+import { AlertCircle, Upload, CheckCircle, Loader2 } from 'lucide-react';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,10 @@ const RegistrationForm = () => {
     file: null
   });
   const [fileName, setFileName] = useState('');
+  const [fileSize, setFileSize] = useState(0);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,14 +24,70 @@ const RegistrationForm = () => {
     }
   };
 
+  const processFile = (file) => {
+    const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+    const allowedTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
+    
+    if (file.size > maxSize) {
+      setErrors(prev => ({ ...prev, file: 'הקובץ גדול מדי. גודל מקסימלי: 5MB' }));
+      setFileName('');
+      setFileSize(0);
+      setFormData(prev => ({ ...prev, file: null }));
+      return false;
+    }
+    
+    if (!allowedTypes.includes(file.type)) {
+      setErrors(prev => ({ ...prev, file: 'סוג קובץ לא נתמך. נא להעלות PDF, JPG או PNG' }));
+      setFileName('');
+      setFileSize(0);
+      setFormData(prev => ({ ...prev, file: null }));
+      return false;
+    }
+    
+    setFormData(prev => ({ ...prev, file }));
+    setFileName(file.name);
+    setFileSize(file.size);
+    if (errors.file) {
+      setErrors(prev => ({ ...prev, file: '' }));
+    }
+    return true;
+  };
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData(prev => ({ ...prev, file }));
-      setFileName(file.name);
-      if (errors.file) {
-        setErrors(prev => ({ ...prev, file: '' }));
+      const success = processFile(file);
+      if (!success) {
+        e.target.value = ''; // Reset file input on error
       }
+    }
+  };
+
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+    
+    const files = e.dataTransfer.files;
+    if (files && files.length > 0) {
+      processFile(files[0]);
     }
   };
 
@@ -37,12 +96,23 @@ const RegistrationForm = () => {
     
     if (!formData.fullName.trim()) {
       newErrors.fullName = 'נא למלא שם מלא';
+    } else {
+      // Check if name has at least 2 words
+      const words = formData.fullName.trim().split(/\s+/);
+      if (words.length < 2) {
+        newErrors.fullName = 'נא להזין שם פרטי ושם משפחה';
+      }
     }
     
     if (!formData.phone.trim()) {
       newErrors.phone = 'נא למלא מספר טלפון';
-    } else if (!/^0\d{1,2}-?\d{7}$/.test(formData.phone.replace(/\s/g, ''))) {
-      newErrors.phone = 'מספר טלפון לא תקין';
+    } else {
+      // Israeli phone number validation: supports formats like 050-1234567, 0501234567, 02-1234567, 021234567
+      const cleanPhone = formData.phone.replace(/[\s-]/g, '');
+      const israeliPhoneRegex = /^0(5[0-9]|[2-4]|[8-9]|7[0-9])\d{7}$/;
+      if (!israeliPhoneRegex.test(cleanPhone)) {
+        newErrors.phone = 'מספר טלפון ישראלי לא תקין';
+      }
     }
     
     if (!formData.email.trim()) {
@@ -53,9 +123,31 @@ const RegistrationForm = () => {
     
     if (!formData.file) {
       newErrors.file = 'נא לצרף טופס 3010';
+    } else if (formData.file.size > 5 * 1024 * 1024) {
+      newErrors.file = 'הקובץ גדול מדי. גודל מקסימלי: 5MB';
     }
     
     return newErrors;
+  };
+
+  // Check if form is valid without setting errors (for button disable state)
+  const isFormValid = () => {
+    // Check full name has at least 2 words
+    const words = formData.fullName.trim().split(/\s+/);
+    if (words.length < 2) return false;
+    
+    // Check Israeli phone
+    const cleanPhone = formData.phone.replace(/[\s-]/g, '');
+    const israeliPhoneRegex = /^0(5[0-9]|[2-4]|[8-9]|7[0-9])\d{7}$/;
+    if (!israeliPhoneRegex.test(cleanPhone)) return false;
+    
+    // Check email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) return false;
+    
+    // Check file exists and is under 5MB
+    if (!formData.file || formData.file.size > 5 * 1024 * 1024) return false;
+    
+    return true;
   };
 
   const handleSubmit = async (e) => {
@@ -67,15 +159,45 @@ const RegistrationForm = () => {
       return;
     }
 
-    // TODO: Integrate with Baserow API
-    // This is a placeholder - actual integration will be added later
-    console.log('Form submitted:', formData);
-    alert('הטופס התקבל בהצלחה! (אינטגרציה ל-Baserow תתווסף בהמשך)');
-    
-    // Reset form
-    setFormData({ fullName: '', phone: '', email: '', file: null });
-    setFileName('');
-    setErrors({});
+    setIsSubmitting(true);
+
+    try {
+      // Create FormData for file upload
+      const formDataToSend = new FormData();
+      formDataToSend.append('fullName', formData.fullName);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('file', formData.file);
+      formDataToSend.append('fileName', formData.file.name);
+
+        // Send to n8n webhook
+        const response = await fetch('https://primary-production-759d0.up.railway.app/webhook-test/hazit-registration', {
+          method: 'POST',
+          body: formDataToSend,
+        });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('הרשמה התקבלה בהצלחה! נתראה באירוע 🎉');
+        // Reset form
+        setFormData({ fullName: '', phone: '', email: '', file: null });
+        setFileName('');
+        setFileSize(0);
+        setErrors({});
+        document.getElementById('file').value = ''; // Reset file input
+      } else if (response.status === 429) {
+        // 100 applicant limit reached
+        alert(result.message || 'מצטערים, הגענו למספר המקסימלי של משתתפים.');
+      } else {
+        throw new Error(result.message || 'אירעה שגיאה');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('אירעה שגיאה בשליחת הטופס. אנא נסה שנית או פנה לתמיכה.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -192,65 +314,99 @@ const RegistrationForm = () => {
                 )}
               </div>
 
-              {/* File Upload */}
+              {/* File Upload with Drag & Drop */}
               <div>
                 <label htmlFor="file" className="block text-right text-gray-700 font-semibold mb-2">
                   טופס 3010 (אישור משרת מילואים) <span className="text-coral">*</span>
                 </label>
-                <div className="relative">
+                <div 
+                  className="relative"
+                  onDragEnter={handleDragEnter}
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onDrop={handleDrop}
+                >
                   <input
                     type="file"
                     id="file"
                     name="file"
                     onChange={handleFileChange}
-                    accept=".pdf,.jpg,.jpeg,.png"
+                    accept=".pdf,.jpg,.jpeg,.png,image/jpeg,image/png,application/pdf"
                     className="hidden"
+                    disabled={isSubmitting}
                   />
                   <label
                     htmlFor="file"
-                    className={`flex items-center justify-between w-full px-4 py-3 border-2 rounded-xl cursor-pointer transition-all hover:border-olive ${
-                      errors.file
+                    className={`flex flex-col md:flex-row items-center justify-between w-full px-4 py-4 md:py-3 border-2 rounded-xl cursor-pointer transition-all ${
+                      isDragging
+                        ? 'border-olive bg-olive/10 scale-[1.02]'
+                        : errors.file
                         ? 'border-red-300 hover:border-red-500'
                         : fileName
                         ? 'border-olive bg-olive/5'
-                        : 'border-gray-200'
-                    }`}
+                        : 'border-gray-200 hover:border-olive'
+                    } ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 mb-2 md:mb-0">
                       {fileName ? (
-                        <CheckCircle className="w-5 h-5 text-olive" />
+                        <CheckCircle className="w-5 h-5 text-olive flex-shrink-0" />
                       ) : (
-                        <Upload className="w-5 h-5 text-gray-400" />
+                        <Upload className={`w-5 h-5 flex-shrink-0 ${isDragging ? 'text-olive' : 'text-gray-400'}`} />
                       )}
-                      <span className={fileName ? 'text-olive font-medium' : 'text-gray-500'}>
-                        {fileName || 'בחר קובץ להעלאה'}
-                      </span>
+                      <div className="flex flex-col items-start">
+                        <span className={fileName ? 'text-olive font-medium' : isDragging ? 'text-olive font-medium' : 'text-gray-500'}>
+                          {isDragging ? 'שחרר כאן...' : fileName || 'בחר קובץ או גרור לכאן'}
+                        </span>
+                        {fileName && fileSize > 0 && (
+                          <span className="text-xs text-gray-400">
+                            {(fileSize / 1024 / 1024).toFixed(2)} MB
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <span className="text-xs text-gray-400">PDF, JPG, PNG</span>
+                    <span className="text-xs text-gray-400 text-center md:text-left">PDF, JPG, PNG (מקס 5MB)</span>
                   </label>
                 </div>
                 {errors.file && (
                   <p className="text-red-500 text-sm mt-1 text-right">{errors.file}</p>
                 )}
+                <p className="text-xs text-gray-500 mt-2 text-right hidden md:block">
+                  💡 ניתן לגרור קובץ לכאן במקום ללחוץ
+                </p>
               </div>
 
               {/* Submit Button */}
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={!isSubmitting && isFormValid() ? { scale: 1.02 } : {}}
+                whileTap={!isSubmitting && isFormValid() ? { scale: 0.98 } : {}}
                 type="submit"
-                className="w-full bg-olive-dark hover:bg-olive text-white font-bold text-lg py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-olive/30"
+                disabled={isSubmitting || !isFormValid()}
+                style={{ 
+                  backgroundColor: isSubmitting ? '#748650' : !isFormValid() ? '#9ca3af' : '#5c6a40',
+                  color: '#ffffff',
+                  cursor: !isFormValid() || isSubmitting ? 'not-allowed' : 'pointer'
+                }}
+                className={`w-full text-white font-bold text-lg py-4 rounded-xl shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-olive/30 flex items-center justify-center gap-2 ${
+                  !isFormValid() || isSubmitting ? 'opacity-60' : 'hover:shadow-2xl'
+                }`}
               >
-                שלח הרשמה
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin text-white" />
+                    <span className="text-white font-bold">שולח...</span>
+                  </>
+                ) : (
+                  <span className="text-white font-bold">שלח הרשמה</span>
+                )}
               </motion.button>
+              
+              {/* Form status hint */}
+              {!isFormValid() && !isSubmitting && (
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  נא למלא את כל השדות בצורה תקינה כדי להמשיך
+                </p>
+              )}
             </form>
-
-            {/* Developer Note */}
-            <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
-              <p className="text-xs text-gray-500 text-center">
-                💡 הערה למפתח: אינטגרציה עם Baserow תתווסף בהמשך
-              </p>
-            </div>
           </div>
         </motion.div>
       </div>
