@@ -7,7 +7,7 @@ const EventInfo = () => {
       icon: Calendar,
       label: 'תאריך',
       mainInfo: '29.12.2025',
-      subInfo: 'יום ראשון',
+      subInfo: 'יום שני',
     },
     {
       icon: Clock,
