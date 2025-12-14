@@ -4,7 +4,7 @@ import { Users, Coffee, Mic, Sparkles, Camera, Linkedin } from 'lucide-react';
 const Itinerary = () => {
   const events = [
     { time: '17:00-18:00', title: 'התכנסות, מינגלינג וצילומים', subtitle: 'צילום תמונת פרופיל מקצועית', icon: Camera, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
-    { time: '18:00-18:15', title: 'דברי פתיחה', subtitle: 'מהחזית לחוזה', icon: Mic, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
+    { time: '18:00-18:15', title: 'דברי פתיחה', icon: Mic, gradient: 'linear-gradient(to bottom right, #8B9E5F, #5C6A40)' },
     { time: '18:15-19:15', title: 'סדנת לינקדאין', subtitle: 'עם רועי משה - בניית פרופיל ונטוורקינג חכם', icon: Linkedin, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
     { time: '19:15-19:30', title: 'הפסקה', icon: Coffee, gradient: 'linear-gradient(to bottom right, #A8B687, #748650)' },
     { time: '19:30-21:00', title: 'המשך סדנה', subtitle: 'כלי AI לקורות חיים ועוד', icon: Linkedin, gradient: 'linear-gradient(to bottom right, #FF6B8A, #C81F4A)' },
@@ -90,20 +90,6 @@ const Itinerary = () => {
                   </motion.div>
                 );
               })}
-            </div>
-
-            {/* Footer with Event Note */}
-            <div className="bg-gradient-to-r from-olive/10 via-coral/10 to-olive/10 p-4 border-t-2 border-olive/20">
-              <div className="flex items-center justify-center gap-2 text-olive-dark">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 rounded-full bg-olive animate-pulse"></div>
-                  <div className="w-2 h-2 rounded-full bg-coral animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                  <div className="w-2 h-2 rounded-full bg-olive animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-                </div>
-                <span className="text-sm md:text-base font-semibold">
-                  צילומים יתקיימו לאורך כל האירוע
-                </span>
-              </div>
             </div>
           </div>
         </motion.div>

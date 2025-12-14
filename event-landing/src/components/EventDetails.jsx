@@ -46,9 +46,6 @@ const EventDetails = () => {
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-brand-green-dark mb-3">
             מה כולל האירוע?
           </h2>
-          <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
-            יום מלא בהזדמנויות, קשרים מקצועיים וכלים למציאת העבודה המושלמת
-          </p>
         </div>
 
         {/* Features Grid */}
